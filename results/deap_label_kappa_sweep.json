@@ -1,0 +1,99 @@
+{
+  "run_stamp": "20260422_133339",
+  "sam_scale_verified": "1-9 continuous (self-reported via SAM; decimal values present)",
+  "tau_grid": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "dimensions": [
+    "valence",
+    "arousal"
+  ],
+  "n_subjects": 32,
+  "n_trials": 40,
+  "source": "/fs2/comm/kpgrp/xuhaiyan/DEAP_data_backup/data_original/participant_ratings.csv",
+  "per_dimension": {
+    "valence": {
+      "per_tau": {
+        "3": {
+          "class_balance": 0.8266,
+          "kappa_inter_fleiss": 0.1977,
+          "kappa_subj_vs_consensus_mean": 0.1674,
+          "kappa_subj_vs_consensus_std": 0.2086,
+          "mean_per_trial_variance": 1.4954
+        },
+        "4": {
+          "class_balance": 0.7133,
+          "kappa_inter_fleiss": 0.3238,
+          "kappa_subj_vs_consensus_mean": 0.4632,
+          "kappa_subj_vs_consensus_std": 0.1924,
+          "mean_per_trial_variance": 1.4954
+        },
+        "5": {
+          "class_balance": 0.5531,
+          "kappa_inter_fleiss": 0.3805,
+          "kappa_subj_vs_consensus_mean": 0.5781,
+          "kappa_subj_vs_consensus_std": 0.1841,
+          "mean_per_trial_variance": 1.4954
+        },
+        "6": {
+          "class_balance": 0.4211,
+          "kappa_inter_fleiss": 0.4003,
+          "kappa_subj_vs_consensus_mean": 0.6047,
+          "kappa_subj_vs_consensus_std": 0.1716,
+          "mean_per_trial_variance": 1.4954
+        },
+        "7": {
+          "class_balance": 0.282,
+          "kappa_inter_fleiss": 0.3417,
+          "kappa_subj_vs_consensus_mean": 0.4388,
+          "kappa_subj_vs_consensus_std": 0.1892,
+          "mean_per_trial_variance": 1.4954
+        }
+      }
+    },
+    "arousal": {
+      "per_tau": {
+        "3": {
+          "class_balance": 0.8234,
+          "kappa_inter_fleiss": 0.0608,
+          "kappa_subj_vs_consensus_mean": 0.0,
+          "kappa_subj_vs_consensus_std": 0.0,
+          "mean_per_trial_variance": 1.8298
+        },
+        "4": {
+          "class_balance": 0.7063,
+          "kappa_inter_fleiss": 0.102,
+          "kappa_subj_vs_consensus_mean": 0.2354,
+          "kappa_subj_vs_consensus_std": 0.2185,
+          "mean_per_trial_variance": 1.8298
+        },
+        "5": {
+          "class_balance": 0.5758,
+          "kappa_inter_fleiss": 0.1153,
+          "kappa_subj_vs_consensus_mean": 0.3313,
+          "kappa_subj_vs_consensus_std": 0.2477,
+          "mean_per_trial_variance": 1.8298
+        },
+        "6": {
+          "class_balance": 0.4094,
+          "kappa_inter_fleiss": 0.1005,
+          "kappa_subj_vs_consensus_mean": 0.1212,
+          "kappa_subj_vs_consensus_std": 0.1101,
+          "mean_per_trial_variance": 1.8298
+        },
+        "7": {
+          "class_balance": 0.2289,
+          "kappa_inter_fleiss": 0.0701,
+          "kappa_subj_vs_consensus_mean": 0.0,
+          "kappa_subj_vs_consensus_std": 0.0,
+          "mean_per_trial_variance": 1.8298
+        }
+      }
+    }
+  },
+  "notes": "DEAP has no stimulus catalog (Koelstra 2012). Metric B substitutes per-trial consensus (mean across 32 subj) as the structural reference. Headline paper number: kappa_inter_fleiss at \u03c4=5 for valence (matches S1b config)."
+}
