@@ -163,7 +163,12 @@ A worked example for the DEAP DGCNN controlled-leakage experiment is included.
 
 ## License
 
-MIT (see `LICENSE`).
+This repository is dual-licensed:
+
+- **Code** (`scripts/`, `requirements.txt`): **MIT License** — see `LICENSE`.
+- **Data, reference outputs, and documentation** (`data/`, `results/`,
+  `README.md`, `CHECKLIST.md`, `MODELCARD_TEMPLATE.md`): **Creative Commons
+  Attribution 4.0 International (CC BY 4.0)** — see `LICENSE-DATA.md`.
 
 ## Citation
 
