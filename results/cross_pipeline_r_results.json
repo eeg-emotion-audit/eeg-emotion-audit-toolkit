@@ -1,7 +1,7 @@
 {
   "experiment": "S3_cross_pipeline_correlation",
-  "chen_de_dir": "/nobackup2/xuhaiyan/FACED_dataset/EEG_Features/DE",
-  "daest_de_dir": "/nobackup2/xuhaiyan/FACED_dataset/EEG_Features/DE_from_DAEST_official",
+  "chen_de_dir": "./data/faced/de_features",
+  "daest_de_dir": "./data/faced/de_features_daest",
   "n_subjects": 123,
   "n_channels": 30,
   "n_bands": 5,

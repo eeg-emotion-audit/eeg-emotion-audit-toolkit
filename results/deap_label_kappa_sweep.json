@@ -14,7 +14,7 @@
   ],
   "n_subjects": 32,
   "n_trials": 40,
-  "source": "/fs2/comm/kpgrp/xuhaiyan/DEAP_data_backup/data_original/participant_ratings.csv",
+  "source": "./data/deap/participant_ratings.csv",
   "per_dimension": {
     "valence": {
       "per_tau": {

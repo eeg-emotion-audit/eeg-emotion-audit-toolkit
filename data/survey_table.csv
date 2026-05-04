@@ -1,41 +1,36 @@
-Paper,Year,Venue,Dataset,Task,N_subjects,N_channels,Preprocessing,Feature_type,Freq_bands,Segment_length_s,CV_scheme,Threshold,Majority_baseline_pct,Reported_acc_pct,Std,Code_available,Credibility,Leakage_type,Source
-Khan et al. (meta-analysis),2025,arXiv,DEAP,binary V/A,32,32,various,various,various,various,"k-fold / LOTO comparison",various,various,"53 (no seg) → 99 (60 seg/trial)",—,no,HIGH,"segmentation leakage quantified",loso_top10
-Kukhilava et al. (EEGain),2025,arXiv,DEAP,binary V/A,32,32,standardized,DE,4 bands,1s,LOSO,5.0,"57-59 (majority)","51-57 (4 models)",—,yes,HIGH,none (honest),loso_top10
-STSNet (Li et al.),2023,Health Inf Sci Sys,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,"5 bands (incl phantom delta 1-3Hz)",4s/50% overlap,LOSO 32-fold,5.0,,69.38 / 71.88,n/r,no,MEDIUM,"no val split; phantom delta 1-3Hz",loso_top10
-ATDD-LSTM (Du et al.),2020,IEEE TAFFC,DEAP,binary V/A,32,32,bandpass 4-45Hz,raw EEG,N/A (end-to-end),2s non-overlapping,LOSO 32-fold (transductive),5.0,,69.06 / 72.97,±6.37/±6.57,no,MEDIUM,transductive target adaptation,loso_top10
-Pandey/Arjun et al.,2021,arXiv,DEAP,binary V/A,32,32,bandpass 4-45Hz,PSD,,4s/50% overlap,LOSO 32-fold,5.0,,65.9 / 69.5,±9.5/±9.7,no,MEDIUM-HIGH,cleanest non-transductive,loso_top10
-ASJDA (Liu et al.),2024,IEEE TAFFC,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,"5 bands (incl phantom delta)",4s(?),LOSO 32-fold,?,?,68.30 / 69.31,±8.93/±11.26,yes,MEDIUM,"phantom delta band",loso_top10
-DGAT (Ding et al.),2025,Front Psychiatry,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,θ/α/β/γ,?,LOSO (claimed),?,?,84.27 / 83.84,±13.74/±10.20,no,LOW,"no val split; likely test-set peak-epoch",loso_top10
-TANet (Wang et al.),2025,Brain Sciences,DEAP,binary V/A,32,32,?,?,?,?,segment-level random 9:1,?,?,"99.69 (seg) / 63.94 (1-fold)",±3.83,no,LOW,"segment-level leakage (99%); single-fold LOSO (63%)",loso_top10
-CogSci DualAttn (Zhang et al.),2024,CogSci 2024,DEAP,binary V/A,32,32,bandpass 4-45Hz,raw EEG,N/A (end-to-end),2s,25-shot adaptation,5.0,,72.35 / 71.77,±5.79/±5.60,no,MEDIUM,"few-shot rebadged as LOSO; true 0-shot ~54%",loso_top10
-MADA (Qiu et al.),preprint,eScholarship,DEAP,binary V/A,32,32,?,?,?,?,target-peeking source selection,?,?,76.48 / 69.72,n/r,no,LOW,target-peeking,loso_top10
-SDA-DDA (Tang et al.),2025,arXiv,DEAP,binary V/A,32,32,?,DE,"5 bands (incl phantom delta)","?",LOSO (claimed),?,?,61.44 / 62.86,±7.15/±10.58,no,VERY LOW,"62ch/310D on 32ch dataset; phantom delta",loso_top10
-SSA-RF (Zhang et al.),2024,MBE,DEAP,binary ?,32,?,?,?,?,?,15 random 25/7 splits (not LOSO),?,?,76.81,n/r,no,LOW,"test-set in optimization; threshold unstated",loso_top10
-DAMSDAN (Hu et al.),2025,arXiv,FACED,binary pos/neg,123,30,"0.3-50Hz/200Hz",DE,5 bands,?,10src→113tgt (NOT 10-fold),stimulus,?,82.88,±7.71,yes,MEDIUM,"protocol deviation from Chen 2023",loso_top10
-MSHCL (Chang et al.),2025,IEEE TAFFC,FACED,binary pos/neg,123,30,?,?,?,?,10-fold subject CV (Chen protocol),stimulus,?,77.0,n/r,yes,MEDIUM,"PDF not personally read",loso_top10
-MSHCL (Chang et al.),2025,IEEE TAFFC,FACED,9-class,123,30,?,?,?,?,10-fold subject CV,stimulus,?,45.7,n/r,yes,MEDIUM,,loso_top10
-DAEST (Shen et al.),2025,IEEE TAFFC,FACED,binary pos/neg,123,30,"official/complete",DE+CNN,5 bands,30s,10-fold subject CV,stimulus,?,81.7 / 75.5,±4.3/±5.5,yes,MEDIUM,"Table I vs Table VI preprocessing gap 6-9pp",loso_top10
-DAEST (Shen et al.),2025,IEEE TAFFC,FACED,9-class,123,30,"official/complete",DE+CNN,5 bands,30s,10-fold subject CV,stimulus,?,67.9 / 59.3,±7.3/±7.7,yes,MEDIUM,,loso_top10
-SDC-Net (Tang et al.),2025,arXiv,FACED,binary pos/neg,123,?,?,?,?,?,? (FACED protocol unverified in main),stimulus,?,75.2,±8.46,yes,MEDIUM,"310D input on 32ch; FACED protocol in supplement only",loso_top10
-SDC-Net (Tang et al.),2025,arXiv,FACED,9-class,123,?,?,?,?,?,?,stimulus,?,42.4,±6.55,yes,MEDIUM,,loso_top10
-EmT (Ding et al.),2025,IEEE TNNLS,FACED,binary valence (self-report),123,32,?,?,?,?,leave-8-out 15-fold,self-report 3.0,?,60.8,F1=0.740,yes,HIGH,"self-report task (different from stimulus binary); cleanest protocol",loso_top10
-Chen SVM baseline,2023,dataset paper,FACED,binary pos/neg,123,30,Chen preprocessing,DE,5 bands,1s,10-fold subject CV,stimulus,?,69.3,±1.5 SE,yes,HIGH,baseline,loso_top10
-Chen SVM baseline,2023,dataset paper,FACED,9-class,123,30,Chen preprocessing,DE,5 bands,1s,10-fold subject CV,stimulus,?,35.2,±1.0 SE,yes,HIGH,baseline,loso_top10
-CLISA (Chen),2023,dataset paper,FACED,9-class,123,30,?,?,?,?,10-fold subject CV,stimulus,?,42.4,±1.2 SE,yes,HIGH,baseline,loso_top10
-SOGNN (Li et al.),2022,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,86.81,±5.34,yes,HIGH,none (stimulus labels),survey_pass2
-SOGNN (Li et al.),2022,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,75.27,±7.63,yes,HIGH,,survey_pass2
-RGNN (Zhong et al.),2020,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,85.30,±6.72,yes,HIGH,,survey_pass2
-RGNN (Zhong et al.),2020,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,73.84,±8.02,yes,HIGH,,survey_pass2
-BiHDM (Li et al.),2020,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,85.40,±7.53,yes,HIGH,,survey_pass2
-BiHDM (Li et al.),2020,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,69.03,±8.66,yes,HIGH,,survey_pass2
-BiDANN-S (Li et al.),2018,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,83.28,±9.60,yes,HIGH,,survey_pass2
-DAN (Li et al.),2018,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,83.81,±8.56,yes,HIGH,,survey_pass2
-DAN (Li et al.),2018,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,58.87,±8.13,yes,HIGH,,survey_pass2
-DGCNN (Zhong et al.),2020,IEEE TNNLS,DEAP,binary valence,32,32,bandpass 4-45Hz,DE,4 bands,1s,LOSO 32-fold,5.0,,52-55,—,no,HIGH,,our_experiments
-DGCNN (Zhong et al.),2020,IEEE TNNLS,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,,85.3,—,yes,HIGH,,our_experiments
-STFCGAT,,,DEAP,binary valence,32,,,,,,,,,91.19,,,,subject-dependent (miscited as LOSO),our_audit
-Our DGCNN (clean split),2026,this paper,DEAP,binary valence,32,32,raw BDF + running_norm + LDS + z-score,DE,5 bands,1s,SD 10-fold (whole-trial),5.0,,55.50,±6.48,—,HIGH,controlled clean baseline,our_experiments
-Our DGCNN (leaky split),2026,this paper,DEAP,binary valence,32,32,same as above,DE,5 bands,1s,SD 10-fold (temporal/within-trial),5.0,,92.22,±4.88,—,HIGH,+36.72pp leakage quantified,our_experiments
-Our DGCNN LOSO,2026,this paper,DEAP,binary valence,32,32,Layer 2 DE5,DE,5 bands,1s,LOSO 32-fold,5.0,,55.03,—,—,HIGH,,our_experiments
-Our MLP,2026,this paper,FACED,binary valence,123,30,Chen preprocessing,DE,5 bands,1s,10-fold CS (shuffled seed=42),stimulus,,62.1,—,—,HIGH,,our_experiments
-Our DGCNN,2026,this paper,FACED,binary valence,123,30,Chen preprocessing,DE,5 bands,1s,10-fold CS (shuffled seed=42),stimulus,,57.2,—,—,HIGH,graph 5pp worse than MLP,our_experiments
+Paper,Year,Venue,Dataset,Task,N_subjects,N_channels,Preprocessing,Feature_type,Freq_bands,Segment_length_s,CV_scheme,Threshold,Majority_baseline_pct,Reported_acc_pct,Std,Code_available,Credibility,Leakage_type
+Khan et al. (meta-analysis),2025,arXiv,DEAP,binary V/A,32,32,various,various,various,various,k-fold / LOTO comparison,various,various,53 (no seg) → 99 (60 seg/trial),—,no,HIGH,segmentation leakage quantified
+Kukhilava et al. (EEGain),2025,arXiv,DEAP,binary V/A,32,32,standardized,DE,4 bands,1s,LOSO,5.0,57-59 (majority),51-57 (4 models),—,yes,HIGH,none (honest)
+STSNet (Li et al.),2023,Health Inf Sci Sys,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,5 bands (incl phantom delta 1-3Hz),4s/50% overlap,LOSO 32-fold,5.0,,69.38 / 71.88,n/r,no,MEDIUM,no val split; phantom delta 1-3Hz
+ATDD-LSTM (Du et al.),2020,IEEE TAFFC,DEAP,binary V/A,32,32,bandpass 4-45Hz,raw EEG,N/A (end-to-end),2s non-overlapping,LOSO 32-fold (transductive),5.0,,69.06 / 72.97,±6.37/±6.57,no,MEDIUM,transductive target adaptation
+Pandey/Arjun et al.,2021,arXiv,DEAP,binary V/A,32,32,bandpass 4-45Hz,PSD,,4s/50% overlap,LOSO 32-fold,5.0,,65.9 / 69.5,±9.5/±9.7,no,MEDIUM-HIGH,cleanest non-transductive
+ASJDA (Liu et al.),2024,IEEE TAFFC,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,5 bands (incl phantom delta),4s(?),LOSO 32-fold,?,?,68.30 / 69.31,±8.93/±11.26,yes,MEDIUM,phantom delta band
+DGAT (Ding et al.),2025,Front Psychiatry,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,θ/α/β/γ,?,LOSO (claimed),?,?,84.27 / 83.84,±13.74/±10.20,no,LOW,no val split; likely test-set peak-epoch
+TANet (Wang et al.),2025,Brain Sciences,DEAP,binary V/A,32,32,?,?,?,?,segment-level random 9:1,?,?,99.69 (seg) / 63.94 (1-fold),±3.83,no,LOW,segment-level leakage (99%); single-fold LOSO (63%)
+CogSci DualAttn (Zhang et al.),2024,CogSci 2024,DEAP,binary V/A,32,32,bandpass 4-45Hz,raw EEG,N/A (end-to-end),2s,25-shot adaptation,5.0,,72.35 / 71.77,±5.79/±5.60,no,MEDIUM,few-shot rebadged as LOSO; true 0-shot ~54%
+MADA (Qiu et al.),preprint,eScholarship,DEAP,binary V/A,32,32,?,?,?,?,target-peeking source selection,?,?,76.48 / 69.72,n/r,no,LOW,target-peeking
+SDA-DDA (Tang et al.),2025,arXiv,DEAP,binary V/A,32,32,?,DE,5 bands (incl phantom delta),?,LOSO (claimed),?,?,61.44 / 62.86,±7.15/±10.58,no,VERY LOW,62ch/310D on 32ch dataset; phantom delta
+SSA-RF (Zhang et al.),2024,MBE,DEAP,binary ?,32,?,?,?,?,?,15 random 25/7 splits (not LOSO),?,?,76.81,n/r,no,LOW,test-set in optimization; threshold unstated
+DAMSDAN (Hu et al.),2025,arXiv,FACED,binary pos/neg,123,30,0.3-50Hz/200Hz,DE,5 bands,?,10src→113tgt (NOT 10-fold),stimulus,?,82.88,±7.71,yes,MEDIUM,protocol deviation from Chen 2023
+MSHCL (Chang et al.),2025,IEEE TAFFC,FACED,binary pos/neg,123,30,?,?,?,?,10-fold subject CV (Chen protocol),stimulus,?,77.0,n/r,yes,MEDIUM,PDF not personally read
+MSHCL (Chang et al.),2025,IEEE TAFFC,FACED,9-class,123,30,?,?,?,?,10-fold subject CV,stimulus,?,45.7,n/r,yes,MEDIUM,
+DAEST (Shen et al.),2025,IEEE TAFFC,FACED,binary pos/neg,123,30,official/complete,DE+CNN,5 bands,30s,10-fold subject CV,stimulus,?,81.7 / 75.5,±4.3/±5.5,yes,MEDIUM,Table I vs Table VI preprocessing gap 6-9pp
+DAEST (Shen et al.),2025,IEEE TAFFC,FACED,9-class,123,30,official/complete,DE+CNN,5 bands,30s,10-fold subject CV,stimulus,?,67.9 / 59.3,±7.3/±7.7,yes,MEDIUM,
+SDC-Net (Tang et al.),2025,arXiv,FACED,binary pos/neg,123,?,?,?,?,?,? (FACED protocol unverified in main),stimulus,?,75.2,±8.46,yes,MEDIUM,310D input on 32ch; FACED protocol in supplement only
+SDC-Net (Tang et al.),2025,arXiv,FACED,9-class,123,?,?,?,?,?,?,stimulus,?,42.4,±6.55,yes,MEDIUM,
+EmT (Ding et al.),2025,IEEE TNNLS,FACED,binary valence (self-report),123,32,?,?,?,?,leave-8-out 15-fold,self-report 3.0,?,60.8,F1=0.740,yes,HIGH,self-report task (different from stimulus binary); cleanest protocol
+Chen SVM baseline,2023,dataset paper,FACED,binary pos/neg,123,30,Chen preprocessing,DE,5 bands,1s,10-fold subject CV,stimulus,?,69.3,±1.5 SE,yes,HIGH,baseline
+Chen SVM baseline,2023,dataset paper,FACED,9-class,123,30,Chen preprocessing,DE,5 bands,1s,10-fold subject CV,stimulus,?,35.2,±1.0 SE,yes,HIGH,baseline
+CLISA (Chen),2023,dataset paper,FACED,9-class,123,30,?,?,?,?,10-fold subject CV,stimulus,?,42.4,±1.2 SE,yes,HIGH,baseline
+SOGNN (Li et al.),2022,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,86.81,±5.34,yes,HIGH,none (stimulus labels)
+SOGNN (Li et al.),2022,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,75.27,±7.63,yes,HIGH,
+RGNN (Zhong et al.),2020,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,85.30,±6.72,yes,HIGH,
+RGNN (Zhong et al.),2020,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,73.84,±8.02,yes,HIGH,
+BiHDM (Li et al.),2020,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,85.40,±7.53,yes,HIGH,
+BiHDM (Li et al.),2020,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,69.03,±8.66,yes,HIGH,
+BiDANN-S (Li et al.),2018,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,83.28,±9.60,yes,HIGH,
+DAN (Li et al.),2018,IEEE TAFFC,SEED,3-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,33.3,83.81,±8.56,yes,HIGH,
+DAN (Li et al.),2018,IEEE TAFFC,SEED-IV,4-class,15,62,bandpass + downsample,DE,5 bands,1s,LOSO 15-fold,N/A,25.0,58.87,±8.13,yes,HIGH,
+DGCNN (Song et al.),2018,IEEE TAffC,SEED,3-class,15,62,SEED official ExtractedFeatures + per-subject z-score,DE,delta/theta/alpha/beta/gamma,1,LOSO 15-fold,n/a,33.3,79.95,9.02,yes,HIGH,none
+DGCNN (Song et al.),2018,IEEE TAffC,SEED-IV,4-class,15,62,SEED-IV official ExtractedFeatures,DE,delta/theta/alpha/beta/gamma,1,LOSO 15-fold,n/a,25.0,52.82,9.23,yes,HIGH,none
+Kukhilava et al. (EEGain) DREAMER,2025,arXiv 2505.18175,DREAMER,binary V/A,23,14,standardized (EEGain framework),DE,theta/alpha/beta/gamma (4-band),1,LOSO 23-fold,>3 strict,~50,60 V / 47 A,—,yes,HIGH,none (honest)
