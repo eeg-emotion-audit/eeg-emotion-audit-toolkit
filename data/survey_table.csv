@@ -3,7 +3,7 @@ Khan et al. (meta-analysis),2025,arXiv,DEAP,binary V/A,32,32,various,various,var
 Kukhilava et al. (EEGain),2025,arXiv,DEAP,binary V/A,32,32,standardized,DE,4 bands,1s,LOSO,5.0,57-59 (majority),51-57 (4 models),n/a,yes,HIGH,none (honest)
 STSNet (Li et al.),2023,Health Inf Sci Sys,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,5 bands (incl phantom delta 1-3Hz),4s/50% overlap,LOSO 32-fold,5.0,,69.38 / 71.88,n/r,no,MEDIUM,no val split; phantom delta 1-3Hz
 ATDD-LSTM (Du et al.),2020,IEEE TAFFC,DEAP,binary V/A,32,32,bandpass 4-45Hz,raw EEG,N/A (end-to-end),2s non-overlapping,LOSO 32-fold (transductive),5.0,,69.06 / 72.97,+/-6.37/+/-6.57,no,MEDIUM,transductive target adaptation
-Pandey/Arjun et al.,2021,arXiv,DEAP,binary V/A,32,32,bandpass 4-45Hz,PSD,,4s/50% overlap,LOSO 32-fold,5.0,,65.9 / 69.5,+/-9.5/+/-9.7,no,MEDIUM-HIGH,cleanest non-transductive
+Pandey/Arjun et al.,2021,IEEE EMBC,DEAP,binary V/A,32,32,bandpass 4-45Hz,PSD,,4s/50% overlap,LOSO 32-fold,5.0,,65.9 / 69.5,+/-9.5/+/-9.7,no,MEDIUM-HIGH,cleanest non-transductive
 ASJDA (Liu et al.),2024,IEEE TAFFC,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,5 bands (incl phantom delta),4s(?),LOSO 32-fold,?,?,68.30 / 69.31,+/-8.93/+/-11.26,yes,MEDIUM,phantom delta band
 DGAT (Ding et al.),2025,Front Psychiatry,DEAP,binary V/A,32,32,bandpass 4-45Hz,DE,theta/alpha/beta/gamma,?,LOSO (claimed),?,?,84.27 / 83.84,+/-13.74/+/-10.20,no,LOW,no val split; likely test-set peak-epoch
 TANet (Wang et al.),2025,Brain Sciences,DEAP,binary V/A,32,32,?,?,?,?,segment-level random 9:1,?,?,99.69 (seg) / 63.94 (1-fold),+/-3.83,no,LOW,segment-level leakage (99%); single-fold LOSO (63%)
