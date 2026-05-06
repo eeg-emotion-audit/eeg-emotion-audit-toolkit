@@ -45,11 +45,11 @@ These 2024-2025 papers report SEED LOSO accuracies above 90% but each has a docu
 
 ## Honorable mentions (not yet verified)
 
-These were surfaced by Perplexity / WebSearch but PDFs are paywalled and were not verified line-by-line. Could be added if PDFs are obtained (e.g., via institutional access).
+These were surfaced via web search but PDFs are paywalled and were not verified line-by-line. Could be added if accessible PDFs are obtained.
 
 | Paper | Year | Venue | Reported (DEAP V/A) | PDF status |
 |---|---|---|---|---|
-| Quan et al. MR-VAE | 2023 | Biomed. Signal Process. Control | 81.19 / 79.59 | ScienceDirect S174680942300174X (paywalled, U of T proxy may grant access) |
+| Quan et al. MR-VAE | 2023 | Biomed. Signal Process. Control | 81.19 / 79.59 | ScienceDirect S174680942300174X (paywalled) |
 | MSRN + MTL (Li et al.) | 2022 | — | 71.29 / 71.92 | Web summary only; PDF not surfaced |
 | Liu et al. multi-source | 2023 | Biomed. Signal Process. Control | DREAMER 72.84 V / 82.62 D / 82.72 A (suspiciously high) | Paywalled; do not add until PDF audit |
 
