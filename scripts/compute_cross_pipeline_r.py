@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""S3 — Cross-pipeline signal correlation for FACED DE features.
+"""Cross-pipeline signal correlation for FACED DE features.
 
 Computes Pearson r between Chen 2023 and DAEST-preprocessed DE features
 for each subject, channel, and frequency band. The two pipelines apply
@@ -39,10 +39,9 @@ Data layout (both dirs contain sub{:03d}.pkl with dict key 'data'):
 
 We align to 30 channels (first 30 of Chen = same electrodes as DAEST).
 
-Run on triton:
-    cd .
+Usage:
     conda activate torcheeg_env
-    python semi_supervised_learning/neurips_verification/compute_cross_pipeline_r.py
+    python scripts/compute_cross_pipeline_r.py
 
 CPU-only, ~2 min for 123 subjects.
 """
@@ -79,7 +78,7 @@ def main():
     for d in [CHEN_DE_DIR, DAEST_DE_DIR]:
         if not os.path.isdir(d):
             print(f"ERROR: directory not found: {d}")
-            print("This script must run on triton where both DE directories exist.")
+            print("This script requires both DE directories to exist locally.")
             sys.exit(1)
 
     per_sub_per_band = np.full((N_SUBS, N_BANDS), np.nan)

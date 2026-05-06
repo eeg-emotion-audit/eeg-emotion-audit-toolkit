@@ -3,18 +3,19 @@ FACED stim-vs-SR arousal mismatch verification.
 
 Parallels verify_deap_arousal.py. Extends verify_faced_labels.py to the arousal
 dimension using the Russell circumplex mapping on the 9 emotion categories
-documented in STIMULUS_AROUSAL_AUDIT.md.
+(see paper Appendix on stimulus-arousal mapping for the per-category derivation).
 
 Inputs:
-    semi_supervised_learning/faced_samples/Data/sub{NNN}/After_remarks.mat
+    data/faced/sub{NNN}/After_remarks.mat
         per-subject 28-clip SAM scores (score vector index 8 = arousal, 9 = valence)
 
 Convention (matches FACED valence convention for paired comparability):
     - SR arousal binarized at >= 3.5 (inclusive) on the 0-7 SAM scale.
-    - Neutral-excluded: 24 non-neutral clips retained per Queue 4c v2 setup.
+    - Neutral-excluded: 24 non-neutral clips retained (4 neutral clips dropped
+      for symmetry with the FACED binary-classification protocol).
 
 Stimulus-level arousal — two bracket variants for Inspiration (ambiguous per
-STIMULUS_AROUSAL_AUDIT.md):
+the paper Appendix on stimulus-arousal mapping):
     Inspiration-LOW:  HIGH = {amusement, joy, anger, disgust, fear} (15 clips)
                       LOW  = {sadness, tenderness, inspiration}    ( 9 clips)
     Inspiration-HIGH: HIGH = {amusement, joy, inspiration, anger, disgust, fear} (18)
@@ -73,7 +74,7 @@ def run():
             vid = int(e.vid)
             emotion = VID_TO_EMOTION[vid]
             if emotion == "neutral":
-                continue  # exclude neutral for symmetry with Queue 4c v2
+                continue  # exclude neutral for symmetry with the binary-classification protocol
             ar = float(sc[AROUSAL_IDX])
             va = float(sc[VALENCE_IDX])
             sr_bin = int(ar >= THRESH)

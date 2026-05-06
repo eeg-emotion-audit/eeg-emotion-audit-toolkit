@@ -1,19 +1,18 @@
 """
-DREAMER stimulus-vs-self-report mismatch verify (3rd anchor for §4.5 table).
+DREAMER stimulus-vs-self-report mismatch verification.
 
-Analog to `deap_test_v1/deap_metadata/verify_deap_arousal.py`, but DREAMER has no
-separate normative cohort like DEAP's `video_list.xls`. Per Msg 2 (2026-04-22):
-stimulus-level labels are derived from Katsigiannis 2018 Table I target-emotion
-categories mapped to Russell quadrants. Self-report labels are per-subject SAM
-1-5 integer, binarized strict >3 per DREAMER's own convention (Katsigiannis
-2018 Table III reproduces exactly with this rule — 3/4/6/5 = LALV/LAHV/HALV/HAHV).
+Analog to `scripts/verify_deap_arousal.py`, but DREAMER has no separate
+normative cohort like DEAP's `video_list.xls`. Stimulus-level labels are
+derived from Katsigiannis 2018 Table I target-emotion categories mapped
+to Russell quadrants. Self-report labels are per-subject SAM 1-5 integer,
+binarized strict >3 per DREAMER's own convention (Katsigiannis 2018
+Table III reproduces exactly with this rule — 3/4/6/5 = LALV/LAHV/HALV/HAHV).
 
-DREAMER paper facts (audit-trail provenance):
+DREAMER paper facts:
     - 18 film clips, 23 final subjects (2 excluded of 25 recruited).
     - Target emotions: calmness, surprise, amusement, fear, excitement,
       disgust, happiness, anger, sadness. Two clips per emotion.
-    - Stimulus catalog: Gabert-Quillen et al. 2008 [21] (NOT Gross-Levenson
-      1995 — corrected 2026-04-22).
+    - Stimulus catalog: Gabert-Quillen et al. 2008 (NOT Gross-Levenson 1995).
     - SAM 1-5 discrete integer scale on V/A/D.
     - EEG: 14-channel Emotiv EPOC, 128 Hz, 4-30 Hz bandpass.
     - Last 60s of each clip used for feature extraction.
@@ -64,7 +63,7 @@ assert len(CATEGORY_PER_CLIP) == 18
 #   14 (anger, A=2.22), 2 (surprise, V=3.04), 11 (calmness, A=1.96, agrees).
 # Category map uses circumplex convention; Table I numeric disagreement is the
 # expected phenomenon the §4.5 mismatch framing exists to characterize.
-# Ambiguous positions resolved per STIMULUS_AROUSAL_AUDIT.md footnote:
+# Ambiguous positions resolved per the per-category Russell mapping notes:
 #   surprise -> V=LOW (DREAMER clips empirically negative per Table I),
 #              A=HIGH (Russell canonical startle).
 #   happiness -> V=HIGH, A=HIGH (excited-joy quadrant per Russell; not
@@ -84,7 +83,7 @@ assert set(CATEGORY_PER_CLIP).issubset(RUSSELL_MAP.keys())
 
 
 def fleiss_kappa_binary(binary_matrix):
-    """Fleiss' kappa on (n_raters, n_items) binary matrix. Mirrors q4h/q4f impl."""
+    """Fleiss' kappa on (n_raters, n_items) binary matrix."""
     n_raters, n_items = binary_matrix.shape
     n_pos = binary_matrix.sum(axis=0)
     n_neg = n_raters - n_pos
