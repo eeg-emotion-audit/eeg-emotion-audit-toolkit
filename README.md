@@ -6,8 +6,10 @@ benchmarks across three independent layers of methodological variation:
 
 The toolkit packages:
 
-- **A 35-record, 15-dimension protocol survey** (`data/survey_table.csv`)
-  spanning DEAP, FACED, SEED, SEED-IV, and DREAMER.
+- **A 45-record, 15-dimension protocol survey** (`data/survey_table.csv`)
+  from 31 distinct studies spanning DEAP, FACED, SEED, SEED-IV, and DREAMER,
+  plus a `data/papers_considered_excluded.md` documenting selection criterion
+  and ~25 candidate papers evaluated and excluded with reasons.
 - **Ten self-contained audit scripts** (`scripts/`) that reproduce the
   numerical claims made in the paper from publicly available datasets:
   cross-pipeline DE correlation, Krippendorff's alpha for self-report
@@ -103,7 +105,8 @@ eeg-emotion-audit-toolkit/
   MODELCARD_TEMPLATE.md      -- Model Card template + filled DEAP DGCNN example
   requirements.txt           -- pip dependencies
   data/
-    survey_table.csv         -- 35-record protocol survey
+    survey_table.csv               -- 45-record protocol survey (31 distinct studies)
+    papers_considered_excluded.md  -- selection criterion + ~25 evaluated-and-excluded candidates
   scripts/
     compute_krippendorff.py        -- Section 4.3 (alpha reliability across DEAP/FACED)
     compute_cross_pipeline_r.py    -- Section 3 (DE cross-pipeline correlation)
