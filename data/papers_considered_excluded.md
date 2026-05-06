@@ -43,16 +43,16 @@ These 2024-2025 papers report SEED LOSO accuracies above 90% but each has a docu
 | DAPLP (Zhong et al.) | Only via CSCL's reproductions; not native benchmark |
 | CSMM (Zhu et al.) | Originally SEED multimodal; FACED via CSCL reproduction only |
 
-## Honorable mentions (not yet verified)
+## Honorable mentions (not verified line-by-line)
 
-These were surfaced via web search but PDFs are paywalled and were not verified line-by-line. Could be added if accessible PDFs are obtained.
+These were surfaced via web search but were not verified line-by-line in this survey window. Could be added in future revisions.
 
-| Paper | Year | Venue | Reported (DEAP V/A) | PDF status |
+| Paper | Year | Venue | Reported (DEAP V/A) | Status |
 |---|---|---|---|---|
-| Quan et al. MR-VAE | 2023 | Biomed. Signal Process. Control | 81.19 / 79.59 | ScienceDirect S174680942300174X (paywalled) |
-| MSRN + MTL (Li et al.) | 2022 | — | 71.29 / 71.92 | Web summary only; PDF not surfaced |
-| Liu et al. multi-source | 2023 | Biomed. Signal Process. Control | DREAMER 72.84 V / 82.62 D / 82.72 A (suspiciously high) | Paywalled; do not add until PDF audit |
+| Quan et al. MR-VAE | 2023 | Biomed. Signal Process. Control | 81.19 / 79.59 | on disk |
+| MSRN + MTL (Li et al.) | 2022 | — | 71.29 / 71.92 | on disk |
+| Liu et al. multi-source | 2023 | Biomed. Signal Process. Control | DREAMER 72.84 V / 82.62 D / 82.72 A (suspiciously high) | on disk |
 
 ## Selection criterion (recap)
 
-The included 45-record survey samples roughly the most-cited cross-subject EEG emotion-recognition benchmarks per dataset published 2018-2025 — approximately the top 10 for DEAP and FACED, the top 5 for SEED and SEED-IV, and the available cross-subject benchmarks for DREAMER. The sample intentionally spans the credibility spectrum (HIGH-MEDIUM-LOW) to surface the reporting-discipline failures the audit characterizes; the entries above were excluded because their inclusion would either (a) introduce a non-representative protocol artifact, (b) duplicate an already-covered audit theme, or (c) require PDF access we were unable to obtain in the survey window.
+The included 45-record survey samples roughly the most-cited cross-subject EEG emotion-recognition benchmarks per dataset published 2018-2025 — approximately the top 10 for DEAP and FACED, the top 5 for SEED and SEED-IV, and the available cross-subject benchmarks for DREAMER. The sample intentionally spans the credibility spectrum (HIGH-MEDIUM-LOW) to surface the reporting-discipline failures the audit characterizes; the entries above were excluded because their inclusion would either (a) introduce a non-representative protocol artifact, (b) duplicate an already-covered audit theme, or (c) require additional line-by-line verification we could not complete in the survey window.
